@@ -29,7 +29,7 @@ public class Group {
         }
     }
 
-    public void printContractStudent() {
+    public void printContractStudent_usingDowncast() {
         for (Student student : students
         ) {
             if (student instanceof ContractStudent) {
