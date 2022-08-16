@@ -1,15 +1,20 @@
 package com.NixALevel.Task01;
 
 public class ContractStudent extends Student {
-    public double getValueOfEducation() {
-        return valueOfEducation;
-    }
+    private double valueOfEducation;
 
     public void setValueOfEducation(double valueOfEducation) {
         this.valueOfEducation = valueOfEducation;
     }
 
-    private double valueOfEducation;
+    public double getValueOfEducation() {
+        return valueOfEducation;
+    }
+
+    @Override
+    public void printValueOfEducation() {
+        System.out.println(this.getName() + " "+ this.getValueOfEducation());
+    }
 
     public ContractStudent(String name, int age, double valueOfEducation) {
         super(name, age);

@@ -37,4 +37,24 @@ public class Group {
             }
         }
     }
+
+    public void printGroup() {
+        for (Student student : students
+        ) {
+            if (student instanceof ContractStudent) {
+                System.out.println(this.groupNumber + " " + student.getName() + " " + ((ContractStudent) student).getValueOfEducation());
+            }
+            else {
+                System.out.println(this.groupNumber + " " + student.getName() + " " + "0.0");
+            }
+        }
+    }
+    public void printContractStudent_usingOverrideMethod() {
+        for (Student student : students
+        ) {
+            if (student instanceof ContractStudent) {
+                System.out.println(this.groupNumber + " " + student.getName() + " " + ((ContractStudent) student).getValueOfEducation());
+            }
+        }
+    }
 }
