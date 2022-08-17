@@ -30,30 +30,35 @@ public class Group {
     }
 
     public void printContractStudent_usingDowncast() {
+        System.out.println("Group " + this.groupNumber);
+        System.out.println("List of contract Students");
         for (Student student : students
         ) {
             if (student instanceof ContractStudent) {
-                System.out.println(this.groupNumber + " " + student.getName() + " " + ((ContractStudent) student).getValueOfEducation());
+                System.out.println(student.getName() + " " + ((ContractStudent) student).getValueOfEducation());
             }
         }
     }
 
     public void printGroup() {
+        System.out.println("Group " + this.groupNumber);
+        System.out.println("List of all Students");
         for (Student student : students
         ) {
             if (student instanceof ContractStudent) {
-                System.out.println(this.groupNumber + " " + student.getName() + " " + ((ContractStudent) student).getValueOfEducation());
+                System.out.println(student.getName() + " " + ((ContractStudent) student).getValueOfEducation());
             }
             else {
-                System.out.println(this.groupNumber + " " + student.getName() + " " + "0.0");
+                System.out.println(student.getName() + " " + "0.0");
             }
         }
     }
     public void printContractStudent_usingOverrideMethod() {
+        System.out.println("Group " + this.groupNumber);
+        System.out.println("List of contract Students");
         for (Student student : students
         ) {
-            if (student instanceof ContractStudent) {
-                System.out.print(this.groupNumber + " " + student.getName() + " ");
+             {
                 student.printValueOfEducation();
             }
         }
