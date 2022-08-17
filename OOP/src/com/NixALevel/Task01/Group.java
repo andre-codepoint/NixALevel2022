@@ -53,7 +53,8 @@ public class Group {
         for (Student student : students
         ) {
             if (student instanceof ContractStudent) {
-                System.out.println(this.groupNumber + " " + student.getName() + " " + ((ContractStudent) student).getValueOfEducation());
+                System.out.print(this.groupNumber + " " + student.getName() + " ");
+                student.printValueOfEducation();
             }
         }
     }

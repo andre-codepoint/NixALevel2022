@@ -7,7 +7,7 @@ public class Main {
         group.printGroup();
         System.out.println("---using downcast----");
         group.printContractStudent_usingDowncast();
-        System.out.println("---using override method----");
+        System.out.println("---using downcast and override method----");
         group.printContractStudent_usingOverrideMethod();
     }
 }
