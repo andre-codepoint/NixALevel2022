@@ -16,11 +16,11 @@ abstract class AbsSub implements BaseSub {
         this.temp = this.temp + temp;
         State state;
         if (this.temp > toGas()) {
-            state = State.ГАЗООБРАЗНИЙ;
+            state = State.GAS;
         } else if (this.temp > toLiquid()) {
-            state = State.РІДИНА;
+            state = State.FLUID;
         } else {
-            state = State.ТВЕРДИЙ;
+            state = State.SOLID;
         }
         return state;
     }
