@@ -20,7 +20,6 @@ public class Group {
         this.students = new Student[n];
         for (int i = 0; i < n; i++) {
             int random = new Random().nextInt(2);
-
             if (random == 0) {
                 students[i] = new Student("StName" + i, 17 + new Random().nextInt(5));
             } else {
