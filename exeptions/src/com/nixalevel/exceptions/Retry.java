@@ -71,6 +71,7 @@ public class Retry {
         }, 10);
         while (retry.getCounterOfAttempts() < retry.numberOfAllAttempts) {
             try {
+                Thread.sleep(100*retry.getCounterOfAttempts());
                 retry.getBlock().run();
                 retry.setDone(true);
             } catch (Exception e) {
