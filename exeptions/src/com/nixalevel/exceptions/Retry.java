@@ -29,7 +29,7 @@ public class Retry {
     public Retry(Block block, int numberOfAllAttempts) {
         setBlock(block);
         setNumberOfAllAttempts(numberOfAllAttempts);
-        isDone=false;
+        isDone = false;
         setCounterOfAttempts(0);
 
     }
@@ -54,9 +54,9 @@ public class Retry {
 
         while (getCounterOfAttempts() < numberOfAllAttempts) {
             try {
-                Thread.sleep(100*getCounterOfAttempts());
+                Thread.sleep(100 * getCounterOfAttempts());
                 getBlock().run();
-                isDone=true;
+                isDone = true;
             } catch (Exception e) {
                 setCounterOfAttempts(getCounterOfAttempts() + 1);
                 if (getCounterOfAttempts() < getNumberOfAllAttempts())
