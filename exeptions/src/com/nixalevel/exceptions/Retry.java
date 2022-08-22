@@ -29,7 +29,7 @@ public class Retry {
     public Retry(Block block, int numberOfAllAttempts) {
         setBlock(block);
         setNumberOfAllAttempts(numberOfAllAttempts);
-        setDone(false);
+        isDone=false;
         setCounterOfAttempts(0);
 
     }
@@ -46,46 +46,29 @@ public class Retry {
         this.numberOfAllAttempts = numberOfAllAttempts;
     }
 
-    public boolean isDone() {
-        return isDone;
-    }
-
-    public void setDone(boolean done) {
-        isDone = done;
-    }
-
     public boolean getDone() {
         return this.isDone;
     }
 
-    public static void main(String[] args) {
-        Retry retry = new Retry(new Block() {
-            @Override
-            public void run() throws Exception {
-                Random rnd = new Random();
-                boolean b = rnd.nextBoolean();
-                if (b) {
-                    throw new Exception("Run was Fault! Throw Exception!");
-                }
-            }
-        }, 10);
-        while (retry.getCounterOfAttempts() < retry.numberOfAllAttempts) {
+    public void runBlock() {
+
+        while (getCounterOfAttempts() < numberOfAllAttempts) {
             try {
-                Thread.sleep(100*retry.getCounterOfAttempts());
-                retry.getBlock().run();
-                retry.setDone(true);
+                Thread.sleep(100*getCounterOfAttempts());
+                getBlock().run();
+                isDone=true;
             } catch (Exception e) {
-                retry.setCounterOfAttempts(retry.getCounterOfAttempts() + 1);
-                if (retry.getCounterOfAttempts() < retry.getNumberOfAllAttempts())
+                setCounterOfAttempts(getCounterOfAttempts() + 1);
+                if (getCounterOfAttempts() < getNumberOfAllAttempts())
                     continue;
                 else {
                     System.out.println("All attempts was used!");
                     break;
                 }
             } finally {
-                if (retry.isDone()) {
-                    retry.setCounterOfAttempts(retry.getCounterOfAttempts() + 1);
-                    System.out.println("Run sucsessful! It was " + retry.getCounterOfAttempts() + " attempts");
+                if (isDone) {
+                    setCounterOfAttempts(getCounterOfAttempts() + 1);
+                    System.out.println("Run sucsessful! It was " + getCounterOfAttempts() + " attempts");
                     break;
                 }
             }
