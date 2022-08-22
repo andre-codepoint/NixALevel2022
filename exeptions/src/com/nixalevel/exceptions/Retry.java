@@ -34,10 +34,6 @@ public class Retry {
 
     }
 
-    public void executeBlockRunCode() {
-
-    }
-
     public int getNumberOfAllAttempts() {
         return numberOfAllAttempts;
     }
@@ -46,18 +42,14 @@ public class Retry {
         this.numberOfAllAttempts = numberOfAllAttempts;
     }
 
-    public boolean getDone() {
-        return this.isDone;
-    }
-
-    public void runBlock() {
+        public void runBlock() throws Exception {
 
         while (getCounterOfAttempts() < numberOfAllAttempts) {
             try {
-                Thread.sleep(100 * getCounterOfAttempts());
                 getBlock().run();
                 isDone = true;
             } catch (Exception e) {
+                Thread.sleep(100 * getCounterOfAttempts());
                 setCounterOfAttempts(getCounterOfAttempts() + 1);
                 if (getCounterOfAttempts() < getNumberOfAllAttempts())
                     continue;
