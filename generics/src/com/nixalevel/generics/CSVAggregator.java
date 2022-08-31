@@ -1,24 +1,25 @@
 package com.nixalevel.generics;
 
-public class CSVAggregator <T> implements Aggregator<String, T> {
+import java.util.StringJoiner;
+
+public class CSVAggregator<T> implements Aggregator<String, T> {
 
     @Override
     public String agregate(T[] items) {
-        if (items==null) {
+        if (items == null) {
             return null;
-        }
-        else {
-            if (items.length==0) {
+        } else {
+            if (items.length == 0) {
                 return "";
-            }
-            else {
-                String s= "";
-                for (T n:items) {
-                    if (n!=null) {
-                        s = s + n.toString()+",";
+            } else {
+//                https://vertex-academy.com/tutorials/ru/java-8-stringjoiner/
+                StringJoiner joiner = new StringJoiner(",");
+                for (T n : items) {
+                    if (n != null) {
+                        joiner.add(n.toString());
                     }
                 }
-                return s.substring(0, s.length() - 1);
+                return joiner.toString();
             }
         }
     }
