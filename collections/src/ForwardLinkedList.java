@@ -48,7 +48,7 @@ public class ForwardLinkedList<E> extends AbstractList<E> {
     }
 
     private class IteratorImpl implements Iterator<E> {
-        Node<E> current;
+        Node<E> current=head;
 
         @Override
         public boolean hasNext() {
@@ -64,14 +64,12 @@ public class ForwardLinkedList<E> extends AbstractList<E> {
         }
     }
 
-
     public void addFirst(E element) {
         Node<E> new_node = new Node(element);
         new_node.next = this.head;
         this.head = new_node;
         capacity = capacity + 1;
     }
-
 
     public void addLast(E element) {
         if (capacity == 0) {
@@ -87,7 +85,6 @@ public class ForwardLinkedList<E> extends AbstractList<E> {
             capacity = capacity + 1;
         }
     }
-
 
     public void removeFirst() {
         if (this.head != null)
