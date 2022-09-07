@@ -28,9 +28,9 @@ public class StreamAPI {
     }
 
     public static Map<LocalDate, List<LocalDateTime>> sortLocalDateTime(List<LocalDateTime> listLocalDateTime) throws IllegalArgumentException {
-//        Map<LocalDate, List<LocalDateTime>> localDateTimeByDate = listLocalDateTime.stream().collect(Collectors.groupingBy(LocalDateTime::toLocalDate));
         return listLocalDateTime.stream()
                 .filter(x -> x != null)
+                .filter(x->Optional.of(x).isPresent())
                 .collect(Collectors.groupingBy(LocalDateTime::toLocalDate))
                 .entrySet().stream()
                 .sorted(Map.Entry.comparingByKey())
