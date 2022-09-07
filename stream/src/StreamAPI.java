@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -6,41 +7,34 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class StreamAPI {
-    public static int stringsToInt(List<String> strings) throws IllegalArgumentException {
-        Optional<String> optional = Optional.of((
-                strings.stream()
-                        .filter(s -> s != null)
-                        .flatMapToInt(String::codePoints)
-                        .filter(Character::isDigit)
-                        .mapToObj(Character::toString)
-                        .collect(Collectors.joining())
-        ));
-        if (optional.isPresent() & optional.get() != "") {
-            return (Integer.parseInt(optional.get()));
-        } else {
-            throw new IllegalArgumentException("Відсутні чисельні дані");
-        }
+    public static String stringsToInt(List<String> strings) throws IllegalArgumentException {
+        return strings.stream()
+                .filter(s -> s != null)
+                .filter(s -> s != "")
+                .flatMapToInt(String::codePoints)
+                .filter(Character::isDigit)
+                .mapToObj(Character::toString)
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException("Некорректні вхідні дані"));
     }
 
-    public static BigInteger findMostCommon(List<BigInteger> list) {
+    public static BigDecimal findMostCommon(List<BigDecimal> list) {
         return list.stream()
+                .filter(x -> x != null)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream().max((o1, o2) -> o1.getValue().compareTo(o2.getValue()))
-                .map(Map.Entry::getKey).orElse(null);
+                .map(Map.Entry::getKey)
+                .orElseThrow(() -> new IllegalArgumentException("Некорректні вхідні дані"));
     }
 
     public static Map<LocalDate, List<LocalDateTime>> sortLocalDateTime(List<LocalDateTime> listLocalDateTime) throws IllegalArgumentException {
-        Map<LocalDate, List<LocalDateTime>> localDateTimeByDate = listLocalDateTime.stream().collect(Collectors.groupingBy(LocalDateTime::toLocalDate));
-        Optional<Map<LocalDate, List<LocalDateTime>>> optional = Optional.of((
-                localDateTimeByDate.entrySet().stream()
-                        .sorted(Map.Entry.comparingByKey())
-                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (o1, o2) -> o1, LinkedHashMap::new))
-        ));
-        if (optional.isPresent() & !optional.isEmpty()) {
-            return ((optional.get()));
-        } else {
-            throw new IllegalArgumentException("Некорректні вхідні дані");
-        }
+//        Map<LocalDate, List<LocalDateTime>> localDateTimeByDate = listLocalDateTime.stream().collect(Collectors.groupingBy(LocalDateTime::toLocalDate));
+        return listLocalDateTime.stream()
+                .filter(x -> x != null)
+                .collect(Collectors.groupingBy(LocalDateTime::toLocalDate))
+                .entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (o1, o2) -> o1, LinkedHashMap::new));
     }
 
     public static void main(String[] args) {
@@ -53,11 +47,11 @@ public class StreamAPI {
 ///        2.Для списку чисел (List<BigDecimal>) повернути те, що зустрічається найчастіше.
 //         https://stackoverflow.com/questions/19031213/java-get-most-common-element-in-a-list
         System.out.println("Task 2:   " + findMostCommon(Arrays.asList(
-                new BigInteger("123"),
-                new BigInteger("123"),
-                new BigInteger("321"),
-                new BigInteger("321"),
-                new BigInteger("321"))));
+                new BigDecimal(123),
+                new BigDecimal(123),
+                new BigDecimal(321),
+                new BigDecimal(321),
+                new BigDecimal(321))));
 
 //        3.Для списку об'єктів типу LocalDateTime повернути асоціативний масив LocalDate -> List<LocalTime>,
 //        згрупувавши дату/час за датою. Записи в map відсортувати по порядку дат.
