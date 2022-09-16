@@ -42,8 +42,7 @@ public class Main {
         Matcher m = regex.matcher(string);
         StringBuffer sb = new StringBuffer(string.length());
         while (m.find()) {
-            String text = m.group(0);
-            m.appendReplacement(sb, Matcher.quoteReplacement("[" + text + "]"));
+            m.appendReplacement(sb, Matcher.quoteReplacement("[" + m.group(0) + "]"));
         }
         m.appendTail(sb);
         return sb.toString();
@@ -93,11 +92,11 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-//        String pathToScan = "d:/temp/demo.txt";
-//        String regex = "NIX";
-        Scanner scanner = new Scanner(System.in);
-        String pathToScan = scanner.next();
-        String regex = scanner.next();
+        String pathToScan = "d:/temp/demo.txt";
+        String regex = "NIX";
+//        Scanner scanner = new Scanner(System.in);
+//        String pathToScan = scanner.next();
+//        String regex = scanner.next();
         List<File> listOfFiles = extracted(pathToScan);
         for (File file : listOfFiles) {
             System.out.println(file.getAbsolutePath());
