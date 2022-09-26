@@ -1,0 +1,5 @@
+Model;Fuel;Engine;MaxSpeed;Age;Price
+Mazda6;gasoline;3.0;180;12;5000
+Lanos;diesel;1.5;145;20;3000
+RangeRover;gasoline;4.5;140;15;20000
+Nissan Leaf;electro;1.8;150;10;10000
