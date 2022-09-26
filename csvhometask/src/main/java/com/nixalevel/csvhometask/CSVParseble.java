@@ -6,5 +6,6 @@ import java.nio.file.Path;
 
 public interface CSVParseble {
     CSVTable parse(Path source) throws IOException;
+
     CSVTable parse(Reader source) throws IOException;
 }

@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 
-public class CSVParser implements CSVParseble{
+public class CSVParser implements CSVParseble {
     private String delimiter = ",";
 
     public CSVParser(String delimiter) {
@@ -16,22 +16,22 @@ public class CSVParser implements CSVParseble{
 
 
     @Override
-        public CSVTable parse(Path source) throws IOException {
-            try(BufferedReader reader = Files.newBufferedReader(source)) {
-                String header = reader.readLine();
-                if (header == null) {
-                    throw new IOException("Can't parse file is empty");
-                }
-                CSVTable table = new CSVTable(parseLine(header));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    table.addRow(parseLine(line));
-                }
-                return table;
-            } catch (IOException e) {
-                throw new IOException(e);
+    public CSVTable parse(Path source) throws IOException {
+        try (BufferedReader reader = Files.newBufferedReader(source)) {
+            String header = reader.readLine();
+            if (header == null) {
+                throw new IOException("Can't parse file is empty");
             }
+            CSVTable table = new CSVTable(parseLine(header));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                table.addRow(parseLine(line));
+            }
+            return table;
+        } catch (IOException e) {
+            throw new IOException(e);
         }
+    }
 
     @Override
     public CSVTable parse(Reader source) {
@@ -39,7 +39,7 @@ public class CSVParser implements CSVParseble{
     }
 
     private CSVRow parseLine(String line) {
-            return new CSVRow(Arrays.asList(line.split(this.delimiter)));
-        }
+        return new CSVRow(Arrays.asList(line.split(this.delimiter)));
+    }
 
 }

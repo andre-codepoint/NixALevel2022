@@ -22,19 +22,13 @@ public class CSVMapper {
             }
         }
         for (CSVRow row : rows) {
-
             T instance = constructor.newInstance();
-
             for (Map.Entry<String, Field> e : columnToFieldMap.entrySet()) {
                 String columnName = e.getKey();
                 Field field = e.getValue();
-
                 int index = table.getColumnIndex(columnName);
-
                 String cell = row.get().get(index);
-
                 Class<T> fieldType = (Class<T>) field.getType();
-
                 if (fieldType.equals(String.class)) {
                     field.set(instance, cell);
                 } else if (fieldType.equals(Integer.class) || fieldType.equals(int.class)) {
@@ -45,13 +39,12 @@ public class CSVMapper {
                     field.setFloat(instance, Float.parseFloat(cell));
                 } else if (fieldType.equals(Double.class) || fieldType.equals(double.class)) {
                     field.setDouble(instance, Double.parseDouble(cell));
-                }else if (fieldType.equals(Long.class) || fieldType.equals(long.class)) {
+                } else if (fieldType.equals(Long.class) || fieldType.equals(long.class)) {
                     field.setLong(instance, Long.parseLong(cell));
                 }
             }
             result.add(instance);
         }
-
         return result;
     }
 }

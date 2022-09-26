@@ -20,28 +20,28 @@ class CSVTableTest {
     private CSVMapper mapper;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         parser = new CSVParser(";");
         mapper = new CSVMapper();
     }
 
     @Test
-    void testCreateCSVTablefromFile () throws Exception {
+    void testCreateCSVTablefromFile() throws Exception {
         Path source = Paths.get(getClass().getResource("/cars.csv").toURI());
         CSVTable table = new CSVParser(";").parse(source);
-        assertEquals("Mazda6", table.getItem(0,0));
-        assertEquals("gasoline", table.getItem(0,1));
-        assertEquals("5000$", table.getItem(0,5));
-        assertEquals("Nissan Leaf", table.getItem(3,0));
-        assertEquals("electro", table.getItem(3,1));
-        assertEquals("10000$", table.getItem(3,5));
-        assertEquals("10000$", table.getItem(3,"Price"));
-        assertEquals("Mazda6", table.getItem(0,"Model"));
+        assertEquals("Mazda6", table.getItem(0, 0));
+        assertEquals("gasoline", table.getItem(0, 1));
+        assertEquals("5000$", table.getItem(0, 5));
+        assertEquals("Nissan Leaf", table.getItem(3, 0));
+        assertEquals("electro", table.getItem(3, 1));
+        assertEquals("10000$", table.getItem(3, 5));
+        assertEquals("10000$", table.getItem(3, "Price"));
+        assertEquals("Mazda6", table.getItem(0, "Model"));
         assertEquals(new ArrayList<>(Arrays.asList("Model", "Fuel", "Engine", "MaxSpeed", "Age", "Price")), table.getHeader());
     }
 
     @Test
-    void testMapCSVTableTo () throws Exception {
+    void testMapCSVTableTo() throws Exception {
         Path source = Paths.get(getClass().getResource("/cars.csv").toURI());
         CSVTable table = new CSVParser(";").parse(source);
         assertEquals(3.0, Float.parseFloat("3.0"));
