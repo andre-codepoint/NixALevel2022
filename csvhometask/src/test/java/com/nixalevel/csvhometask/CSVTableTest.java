@@ -3,6 +3,7 @@ package com.nixalevel.csvhometask;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -19,23 +20,27 @@ class CSVTableTest {
 
     private CSVMapper mapper;
 
+    private Path source;
+
+    private CSVTable table;
+
     @BeforeEach
-    void setUp() {
+    void setUp() throws IOException, URISyntaxException {
         parser = new CSVParser(";");
         mapper = new CSVMapper();
+        source = Paths.get(getClass().getResource("/cars.csv").toURI());
+        table = new CSVParser(";").parse(source);
     }
 
     @Test
     void testCreateCSVTablefromFile() throws Exception {
-        Path source = Paths.get(getClass().getResource("/cars.csv").toURI());
-        CSVTable table = new CSVParser(";").parse(source);
         assertEquals("Mazda6", table.getItem(0, 0));
         assertEquals("gasoline", table.getItem(0, 1));
-        assertEquals("5000$", table.getItem(0, 5));
+        assertEquals("5000", table.getItem(0, 5));
         assertEquals("Nissan Leaf", table.getItem(3, 0));
         assertEquals("electro", table.getItem(3, 1));
-        assertEquals("10000$", table.getItem(3, 5));
-        assertEquals("10000$", table.getItem(3, "Price"));
+        assertEquals("10000", table.getItem(3, 5));
+        assertEquals("10000", table.getItem(3, "Price"));
         assertEquals("Mazda6", table.getItem(0, "Model"));
         assertEquals(new ArrayList<>(Arrays.asList("Model", "Fuel", "Engine", "MaxSpeed", "Age", "Price")), table.getHeader());
     }
