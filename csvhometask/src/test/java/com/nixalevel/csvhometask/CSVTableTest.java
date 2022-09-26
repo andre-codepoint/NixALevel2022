@@ -48,6 +48,8 @@ class CSVTableTest {
         List<CarsData> carsData = mapper.map(table, CarsData.class);
         assertEquals(4, carsData.size());
         assertEquals("Mazda6", carsData.get(0).getModel());
+        carsData.get(0).setModel("Subaru");
+        assertEquals("Subaru", carsData.get(0).getModel());
         assertEquals("gasoline", carsData.get(0).getFuel());
         assertEquals(Float.parseFloat("3.0"), carsData.get(0).getEngine());
         assertEquals(180, carsData.get(0).getMaxspeed());
