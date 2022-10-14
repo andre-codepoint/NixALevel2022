@@ -37,17 +37,18 @@ public class addWaypoint {
         double longitude = 36.30172482719223;
 
         Command<WaypointDTO> command = commandFactory.ingestWaypoint(new CreateWaypointRequest(
-                longitude,
-                altitude
+                altitude,
+                longitude
+
         ));
 
         WaypointDTO wp = command.execute();
 
         System.out.printf(
-                "Created Waypoint %d: altitude %d and longitude %d",
+                "Created Waypoint %d: altitude %f and longitude %f",
                 wp.id(),
                 wp.altitude(),
-                wp.altitude()
+                wp.longitude()
         );
     }
 }
