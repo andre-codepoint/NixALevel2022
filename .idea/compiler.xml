@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/servletsone/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jeebox" />
+        <module name="todolist-spring-web" />
+        <module name="date-wizard" />
+        <module name="servlet" />
+        <module name="csvhometask" />
+        <module name="jpabox" />
+        <module name="mobile-operator" />
+        <module name="springbox" />
+        <module name="csvparser" />
+        <module name="threadhHW" />
+        <module name="message-store" />
+        <module name="unittestbox" />
+        <module name="core" />
+        <module name="referral" />
+        <module name="servlets" />
+        <module name="jpaJavaRush" />
+        <module name="jdbcbox" />
+        <module name="servlethw01" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ear" target="1.5" />
+      <module name="ejbs" target="1.5" />
+      <module name="exeptions" target="17" />
+      <module name="jpa" target="17" />
+      <module name="jpaubike" target="17" />
+      <module name="logging" target="1.5" />
+      <module name="morsecodec" target="17" />
+      <module name="primary-source" target="1.5" />
+      <module name="projects" target="1.5" />
+      <module name="servhw01" target="1.8" />
+      <module name="servlethw01" target="1.8" />
+      <module name="servlets" target="1.5" />
+      <module name="servlets01" target="1.8" />
+      <module name="servletshw" target="1.5" />
+      <module name="servletshw01" target="17" />
+      <module name="servletsone" target="1.5" />
+      <module name="ubike-ingest" target="17" />
+      <module name="ubike-ingest (1)" target="17" />
+      <module name="ubike-ingest (2)" target="17" />
+      <module name="ubike-ingest2" target="17" />
+      <module name="ubike-parent (1)" target="1.5" />
+      <module name="ubike-parent (2)" target="1.5" />
+      <module name="ubike-report" target="17" />
+      <module name="ubike-report (1)" target="17" />
+      <module name="ubike-report (2)" target="17" />
+      <module name="ubike-report1" target="17" />
+      <module name="untitled" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="message-store" options="-parameters" />
+      <module name="springbox" options="-parameters" />
+      <module name="todolist-spring-web" options="-parameters" />
+    </option>
+  </component>
+</project>

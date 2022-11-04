@@ -14,7 +14,7 @@ public class CarsData {
     @ActiveColumn("maxspeed")
     private int maxspeed;
 
-    @ActiveColumn("Age")
+    @ActiveColumn("age")
     private int age;
 
     @ActiveColumn("price")

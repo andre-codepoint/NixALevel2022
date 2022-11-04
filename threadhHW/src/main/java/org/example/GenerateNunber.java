@@ -39,4 +39,5 @@ public class GenerateNunber  {
         }
         }
         return result;
-}}
+}
+}

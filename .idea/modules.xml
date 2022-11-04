@@ -3,6 +3,16 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NixALevel.iml" filepath="$PROJECT_DIR$/NixALevel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bigO/bigO.iml" filepath="$PROJECT_DIR$/bigO/bigO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/collections/collections.iml" filepath="$PROJECT_DIR$/collections/collections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exeptions/exeptions.iml" filepath="$PROJECT_DIR$/exeptions/exeptions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generics/generics.iml" filepath="$PROJECT_DIR$/generics/generics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io/io.iml" filepath="$PROJECT_DIR$/io/io.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module1/module1.iml" filepath="$PROJECT_DIR$/module1/module1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module3/module3.iml" filepath="$PROJECT_DIR$/module3/module3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stream/stream.iml" filepath="$PROJECT_DIR$/stream/stream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ubike-main/ubike-main/ubike-ingest/ubike-ingest.iml" filepath="$PROJECT_DIR$/ubike-main/ubike-main/ubike-ingest/ubike-ingest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ubike-main/ubike-main/ubike-report/ubike-report.iml" filepath="$PROJECT_DIR$/ubike-main/ubike-main/ubike-report/ubike-report.iml" />
     </modules>
   </component>
 </project>

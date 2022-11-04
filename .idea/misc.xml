@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="javaeeApplication" url="file://$PROJECT_DIR$/servletsone/ear" />
+    <file type="web" url="file://$PROJECT_DIR$/demo" />
+    <file type="web" url="file://$PROJECT_DIR$/servhw01" />
+    <file type="web" url="file://$PROJECT_DIR$/servlethw01" />
+    <file type="web" url="file://$PROJECT_DIR$/servlets01" />
+    <file type="web" url="file://$PROJECT_DIR$/servletshw01" />
+    <file type="web" url="file://$PROJECT_DIR$/servletsone/servlets/servlet" />
+    <file type="web" url="file://$PROJECT_DIR$/../sandbox-master/sandbox-master/jeebox" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../sandbox-master/sandbox-master/pom.xml" />
+        <option value="$PROJECT_DIR$/../morzecodec/pom.xml" />
+        <option value="$PROJECT_DIR$/csvhometask/pom.xml" />
+        <option value="$PROJECT_DIR$/../referral/pom.xml" />
+        <option value="$PROJECT_DIR$/../sandbox-master/sandbox-master/jpabox/pom.xml" />
+        <option value="$PROJECT_DIR$/ubike-main/ubike-main/pom.xml" />
+        <option value="$PROJECT_DIR$/jpaJavaRush/pom.xml" />
+        <option value="$PROJECT_DIR$/ubike-main (1)/ubike-main/ubike-report/pom.xml" />
+        <option value="$PROJECT_DIR$/ubike-main/ubike-main/ubike-report/pom.xml" />
+        <option value="$PROJECT_DIR$/ubike-main-report/ubike-main/pom.xml" />
+        <option value="$PROJECT_DIR$/ubike-main-report/ubike-main/ubike-ingest/pom.xml" />
+        <option value="$PROJECT_DIR$/ubike-main-report/ubike-main/ubike-report/pom.xml" />
+        <option value="$PROJECT_DIR$/ubike-main-first/ubike-main/pom.xml" />
+        <option value="$PROJECT_DIR$/ubike-main-second/ubike-main/pom.xml" />
+        <option value="$PROJECT_DIR$/threadhHW/pom.xml" />
+        <option value="$PROJECT_DIR$/module3/servlets01/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/servletsone/servlets/pom.xml" />
+        <option value="$PROJECT_DIR$/ubike-main-first/ubike-main/ubike-ingest/pom.xml" />
+        <option value="$PROJECT_DIR$/ubike-main-first/ubike-main/ubike-report/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
   </component>
 </project>
