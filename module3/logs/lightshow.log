@@ -1,0 +1,24 @@
+
+10:14:33.533 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.4.Final
+10:14:34.711 [main] INFO  o.h.e.j.c.i.ConnectionProviderInitiator - HHH000130: Instantiating explicit connection provider: org.hibernate.hikaricp.internal.HikariCPConnectionProvider
+10:14:34.730 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:14:35.230 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:14:35.349 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+10:14:36.675 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+10:15:34.876 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'Red' to 'Green' at 2022-10-23 03:00:00.0
+10:15:34.876 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'Green' to 'White' at 2022-10-23 03:00:00.0
+10:15:34.876 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'White' to 'Red' at 2022-10-23 03:00:00.0
+10:15:34.876 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'Red' to 'White' at 2022-10-23 03:00:00.0
+10:15:34.876 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'White' to 'Green' at 2022-10-23 03:00:00.0
+10:15:34.876 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'Green' to 'Red' at 2022-10-23 03:00:00.0
+10:15:34.876 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'Red' to 'Green' at 2022-10-23 03:00:00.0
+10:15:34.876 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'Green' to 'Brown' at 2022-10-23 03:00:00.0
+10:15:34.876 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'Brown' to 'White' at 2022-10-23 03:00:00.0
+10:15:34.876 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'White' to 'Red' at 2022-10-23 03:00:00.0
+10:15:34.876 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'Red' to 'Green' at 2022-10-23 03:00:00.0
+10:15:34.877 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'Green' to 'Red' at 2022-10-23 03:00:00.0
+10:15:34.877 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'Red' to 'White' at 2022-10-23 03:00:00.0
+10:15:34.877 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'White' to 'Green' at 2022-10-23 03:00:00.0
+10:15:34.877 [main] INFO  com.nixalevel.cli.CLI - 'Tomatoo' change color 'Green' to 'Brown' at 2022-10-23 03:00:00.0
+10:15:34.878 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+10:15:34.881 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

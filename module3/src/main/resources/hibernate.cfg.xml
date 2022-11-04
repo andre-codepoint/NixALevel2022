@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/lightshow_db</property>
+        <property name="hibernate.connection.username">alevel</property>
+        <property name="hibernate.connection.password">alevelpw</property>
+
+        <property name="hibernate.connection.provider_class">
+            org.hibernate.hikaricp.internal.HikariCPConnectionProvider
+        </property>
+        <property name="hibernate.hikari.maximumPoolSize">1</property>
+
+        <mapping class="com.nixalevel.model.Colors"/>
+        <mapping class="com.nixalevel.model.Light"/>
+        <mapping class="com.nixalevel.model.ColorHistory"/>
+    </session-factory>
+
+</hibernate-configuration>

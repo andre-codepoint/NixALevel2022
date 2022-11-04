@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: lightshow_container
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: alevelpw
+      POSTGRES_USER: alevel
+      POSTGRES_DB: lightshow_db
+    volumes:
+      - db_data:/var/lib/postgresql/datatest
+    ports:
+      - "5432:5432"
+
+volumes:
+  db_data:
+    driver: local
