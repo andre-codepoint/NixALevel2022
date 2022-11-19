@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/servletsone/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/marketplace/src/main/resources/archetype-resources" includeSubdirectories="true" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
@@ -36,6 +37,7 @@
       <module name="jpa" target="17" />
       <module name="jpaubike" target="17" />
       <module name="logging" target="1.5" />
+      <module name="marketplace" target="1.5" />
       <module name="morsecodec" target="17" />
       <module name="primary-source" target="1.5" />
       <module name="projects" target="1.5" />
